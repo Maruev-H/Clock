@@ -1,0 +1,79 @@
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+  position: absolute;
+  transform-origin: center bottom;
+}
+
+.hour-hand {
+  width: 4px;
+  height: 50px;
+  background-color: #000;
+  top: calc(50% - 50px);
+  left: calc(50% - 2px);
+  transform: rotate(0deg);
+}
+
+.minute-hand {
+  width: 3px;
+  height: 70px;
+  background-color: #000;
+  top: calc(50% - 70px);
+  left: calc(50% - 1.5px);
+  transform: rotate(0deg);
+}
+
+.second-hand {
+  width: 2px;
+  height: 90px;
+  background-color: #f00;
+  top: calc(50% - 90px);
+  left: calc(50% - 1px);
+  transform: rotate(0deg);
+}
+
+.center-circle {
+  width: 12px;
+  height: 12px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &::before {
+    content: "";
+    display: block;
+    background-image: url("https://bellatrix.su/selector/images/dial-canister-eb-336v.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 275px;
+    height: 275px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.digital-clock {
+  font-size: 24px;
+  color: #000;
+  position: absolute;
+  top: 70%;
+}
